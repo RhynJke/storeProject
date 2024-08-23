@@ -12,19 +12,32 @@
   </div>
   <div class="container">
     <div class="inner_box">
-      <form action="home.html">
+      <form id="loginform" action="">
 
-        <input type="text" name="Username" id="" placeholder="Username" required>
+        <input type="text" name="Username" id="username" placeholder="Username" required>
         <br>
         <br>
-        <input type="password" name="Password" id="" placeholder="Password" required>
+        <input type="password" name="Password" id="password" placeholder="Password" required>
         <BR>
-        <input id="sbmt" class="button" type="submit" placeholder="LOG IN">
+        <button id="sbmt" class="button" type="submit" onclick="validate()" >Login</button>
       </form>
     </div>
   </div>
 
   <script>
+    function validate(){
+      let un = document.getElementById('username').value;
+      let pw = document.getElementById('password').value;
+
+      if(un === "store" && pw === "daz123"){
+        window.location = "home.html";
+      }else {
+        alert('Incorrect Login');
+      }
+    }
+    
+
+      
 
   </script>
 </body>
