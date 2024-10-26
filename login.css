@@ -17,10 +17,22 @@
   width: 100%;
   height: 600px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 
   background-color: rgb(221, 220, 220);
+}
+
+#warning{
+  width: 100%;
+  height: 100px;
+  /* background-color: blueviolet; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: red;
+  font-size: 20pt;
 }
 
 .inner_box {

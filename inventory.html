@@ -12,27 +12,27 @@
   </div>
   <div class="container_inventory">
     <h2>ADDING PRODUCT</h2>
-    <br>
-    <form action="">
-      <input class="entry_invent" type="text" name="barcode" placeholder=" Enter Barcode" />
+    <form id="productForm" method="post">
       <br><br>
-      <input class="entry_invent" type="text" name="productname" placeholder="Enter Product Name" />
+      <input id="entry_prodId"  type="text" name="productnumber" placeholder="Enter Last 3 Digit Number"/>
       <br><br>
-      <input class="entry_invent" type="text" name="investment" placeholder="Enter Puhunan" />
+      <input id="entry_name" type="text" name="productname" placeholder="Enter Product Name" />
       <br><br>
-      <input class="entry_invent" type="text" name="price" placeholder="Enter Price" />
+      <input id="entry_invest" type="text" name="investment" placeholder="Enter Puhunan" />
       <br><br>
-      <input class="entry_invent" type="text" name="wholesale" id="" placeholder="Enter Wholesale Price">
+      <input id="entry_wholesale" type="text" name="wholesale" placeholder="Enter Wholesale Price">
       <br><br>
-      <input class="entry_invent" type="text" name="retail" id="" placeholder="Enter Retail Price" />
+      <input id="entry_numofWholesale" type="number" name="wholesaleNumber" placeholder="Enter Number of Wholesale">
       <br><br>
-      <input class="button_submit_inven" type="submit" name="submit" value="SAVE" />
+      <input id="entry_Retail" type="text" name="retail" placeholder="Enter Retail Price" />
       <br><br>
-      <input class="clear_button_inven" type="submit" name="clear" value="CLEAR" >
+      <input id="entry_numofRetail" type="number" name="wholesaleNumber" placeholder="Enter Number of Retail">
+      <br><br>
+      <input id="button_submit_inven" type="submit" name="submit" value="SAVE" onclick="sumbitData()"/>
+      <br><br>
+      <input id="clear_button_inven" type="submit" name="clear" value="CLEAR" >
     </form>
-    <div class="display">
-      
-    </div>
   </div>
+  <script src="store.js"></script>
 </body>
-</html>
+</html

@@ -11,9 +11,9 @@
     <h2>Daz Store</h2>
   </div>
   <div class="container">
+    <div id="warning"></div>
     <div class="inner_box">
-      <form id="loginform" action="" method="post">
-
+      <form id="loginform" action="" method="post" onsubmit="return validate(event)">
         <input type="text" name="Username" id="username" placeholder="Username" required>
         <br>
         <br>
@@ -25,19 +25,40 @@
   </div>
 
   <script>
-    function validate(){
+    function validate(event) {
+      event.preventDefault();
+      const warningBox = document.getElementById('warning');
+
       let un = document.getElementById('username').value;
       let pw = document.getElementById('password').value;
 
-      if(un === "store" && pw === "daz123"){
-        window.location = "home.html";
-      }else {
-        alert('Incorrect Login');
+      if (un === "store" && pw === "daz123") {
+        window.location.href = "home.html";
+      }else if(un !== "store" && pw === "daz123"){
+        const warnings = document.createTextNode('Incorrect Username!');
+        const elements = document.getElementById('warning');
+        elements.appendChild(warnings);
+      }else if(un === "store" && pw !== "daz123"){
+        const warnings = document.createTextNode('Incorrect Password!');
+        const elements = document.getElementById('warning');
+        elements.appendChild(warnings);
+      } else {
+        const warnings = document.createTextNode('Incorrect Username and Password!');
+        const elements = document.getElementById('warning');
+        elements.appendChild(warnings);
+        // alert('Incorrect Login');
       }
-    }
     
+    setInterval(function(){
+      warningBox.innerText = '';
+    },5000);
 
-      
+    const myInterval = setInterval(myTimer, 1000);
+    
+    function myStop(){
+      clearInterval(myTimer);
+    }
+    }
 
   </script>
 </body>
